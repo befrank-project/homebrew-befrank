@@ -1,6 +1,9 @@
 For Mac OS X users:
+
 install brew from http://brew.sh
+
 brew tap befrank-project/homebrew-befrank
+
 brew install befrank-project/homebrew-befrank/befrank
 
 you will now have the command line tools for befrank
