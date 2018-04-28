@@ -10,8 +10,8 @@ class BefrankWallet < Formula
   depends_on "qt"
 
   def install
-    system "git", "submodule libqrencode update --init"
-    system "git", "submodule cryptonote update --init"
+    system "git", "submodule update --init libqrencode"
+    system "git", "submodule update --init cryptonote"
     system "cmake", ".", *std_cmake_args
     system "make", "install"
     prefix.install "befrank-wallet-qt.app"
