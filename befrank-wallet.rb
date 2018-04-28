@@ -5,7 +5,7 @@ class BefrankWallet < Formula
   sha256 "9a482013ddb6a7b3f1c396b5a760d63ded76006e3269d2d403eddc702a1843b2"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends on "qrencode" => :build
+  depends_on "qrencode" => :build
   depends_on "boost"
   depends_on "qt"
 
