@@ -19,6 +19,33 @@ class BefrankWallet < Formula
   end
   
   def install
+    resource("libqrencode").stage do
+      ENV.append "LDFLAGS", "-lintl"
+
+      # Reset ARCHFLAGS to match how we build
+      ENV["ARCHFLAGS"] = "-arch #{MacOS.preferred_arch}"
+
+      system "./autogen.sh"
+      system "./configure", "--prefix=#{libexec}/fontforge",
+                            "--without-libzmq",
+                            "--without-x",
+                            "--without-iconv",
+                            "--disable-python-scripting",
+                            "--disable-python-extension"
+      system "make"
+      system "make", "install"
+    end
+    
+    resource("cryptonote").stage do
+      ENV.append "LDFLAGS", "-lintl"
+
+      # Reset ARCHFLAGS to match how we build
+      ENV["ARCHFLAGS"] = "-arch #{MacOS.preferred_arch}"
+
+      system "cmake", ".", *std_cmake_args
+      system "make", "install"
+    end
+
     system "cmake", ".", *std_cmake_args
     system "make", "install"
     prefix.install "befrank-wallet-qt.app"
