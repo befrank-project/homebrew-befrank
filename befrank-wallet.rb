@@ -6,12 +6,19 @@ class BefrankWallet < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "qrencode" => :build
+  depends_on "befrank"=> :build
   depends_on "boost"
   depends_on "qt"
 
+  resource "cryptonote" do
+    url "https://github.com/befrank-project/befrank.git", :tag => "v0.1.1-alpha.4"
+  end
+  
+   resource "libqrencode" do
+    url "https://github.com/fukuchi/libqrencode.git", :tag => "v3.4.4"
+  end
+  
   def install
-    system "git", "submodule", "update", "--init", "libqrencode"
-    system "git", "submodule", "update", "--init", "cryptonote"
     system "cmake", ".", *std_cmake_args
     system "make", "install"
     prefix.install "befrank-wallet-qt.app"
