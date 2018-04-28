@@ -5,8 +5,9 @@ class BefrankWallet < Formula
   sha256 "9a482013ddb6a7b3f1c396b5a760d63ded76006e3269d2d403eddc702a1843b2"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "qrencode" => :build
-  depends_on "befrank"=> :build
+  depends_on "autoconf" => :build
+  depends_on "autoconf" => :build
+  depends_on "qrencode"
   depends_on "boost"
   depends_on "qt"
 
@@ -26,12 +27,7 @@ class BefrankWallet < Formula
       ENV["ARCHFLAGS"] = "-arch #{MacOS.preferred_arch}"
 
       system "./autogen.sh"
-      system "./configure", "--prefix=#{libexec}/fontforge",
-                            "--without-libzmq",
-                            "--without-x",
-                            "--without-iconv",
-                            "--disable-python-scripting",
-                            "--disable-python-extension"
+      system "./configure"
       system "make"
       system "make", "install"
     end
