@@ -2,7 +2,7 @@ class BefrankWallet < Formula
   desc "GUI wallet for the Belgian eFrank. A crypto-currency made for and by Belgians and anyone who feels part of our community."
   homepage "http://getfrank.be"
   url "https://github.com/befrank-project/befrank-wallet/archive/v0.1.1-alpha.5.tar.gz"
-  sha256 "9a482013ddb6a7b3f1c396b5a760d63ded76006e3269d2d403eddc702a1843b2"
+  sha256 "a2019ec5cb23e7a53ef2bc7d9d2de1e6b839805f64b2ac9bd439e0fe2af260d5"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "automake" => :build
