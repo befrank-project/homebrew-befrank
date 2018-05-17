@@ -1,7 +1,7 @@
 class Befrank < Formula
   desc "Command line tools (daemon, wallet and miner) for the Belgian eFrank. A crypto-currency made for and by Belgium and anyone who feels part of our community."
   homepage "http://getfrank.be"
-  url "https://github.com/befrank-project/befrank/archive/v0.1.1-alpha.4.tar.gz"
+  url "https://github.com/befrank-project/befrank/archive/v0.1.1-alpha.5.tar.gz"
   sha256 "554b1a3206d60939d84871685d7965655f0a1336db43c03acd73be45ab96cd02"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
