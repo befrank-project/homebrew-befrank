@@ -1,7 +1,7 @@
 class BefrankWallet < Formula
   desc "GUI wallet for the Belgian eFrank. A crypto-currency made for and by Belgians and anyone who feels part of our community."
   homepage "http://getfrank.be"
-  url "https://github.com/befrank-project/befrank-wallet/archive/v0.1.1-alpha.4.tar.gz"
+  url "https://github.com/befrank-project/befrank-wallet/archive/v0.1.1-alpha.5.tar.gz"
   sha256 "9a482013ddb6a7b3f1c396b5a760d63ded76006e3269d2d403eddc702a1843b2"
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -14,7 +14,7 @@ class BefrankWallet < Formula
   depends_on "qt"
 
   resource "cryptonote" do
-    url "https://github.com/befrank-project/befrank.git", :tag => "v0.1.1-alpha.4"
+    url "https://github.com/befrank-project/befrank.git", :tag => "v0.1.1-alpha.5"
   end
   
    resource "libqrencode" do
